@@ -52,6 +52,13 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.12.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.rookout</groupId>
+			<artifactId>rook</artifactId>
+			<version>0.1.51</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -59,8 +66,20 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <ROOKOUT_TOKEN>32fc4979145b67b28e9612eb312bac7af70ad3b9d3992baf9564fde94423eed2</ROOKOUT_TOKEN>
+                        <ROOKOUT_LABELS>env:dev</ROOKOUT_LABELS>
+                    </systemPropertyVariables>
+                </configuration>
 			</plugin>
 		</plugins>
+	<resources>
+		<resource>
+			<directory>${basedir}/src/main/java</directory>
+		</resource>
+	</resources>
+
 	</build>
 
 </project>

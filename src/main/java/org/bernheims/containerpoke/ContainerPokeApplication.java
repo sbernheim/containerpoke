@@ -24,11 +24,16 @@ package org.bernheims.containerpoke;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.rookout.rook.API;
+import com.rookout.rook.RookOptions;
 
 @SpringBootApplication
 public class ContainerPokeApplication {
 
 	public static void main(String[] args) {
+    RookOptions opts = new RookOptions();
+    //opts.token = "<Your-Token>";
+    API.start(opts);
 		SpringApplication.run(ContainerPokeApplication.class, args);
 	}
 
